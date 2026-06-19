@@ -33,51 +33,6 @@
 
 ---
 
-## Структура проекта
-weather_project/
-├── manage.py
-├── db.sqlite3
-├── weather_project/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   ├── wsgi.py
-│   └── __pycache__/
-│       ├── __init__.cpython-313
-│       ├── settings.cpython-313
-│       ├── urls.cpython-313
-│       └── wsgi.cpython-313
-└── weather_app/
-    ├── __init__.py
-    ├── admin.py
-    ├── apps.py
-    ├── forms.py
-    ├── models.py
-    ├── urls.py
-    ├── views.py
-    ├── migrations/
-    ├── __pycache__/
-    │   ├── __init__.cpython-313
-    │   ├── admin.cpython-313
-    │   ├── apps.cpython-313
-    │   ├── forms.cpython-313
-    │   ├── models.cpython-313
-    │   ├── urls.cpython-313
-    │   └── views.cpython-313
-    ├── templates/
-    │   ├── base.html
-    │   ├── weather/
-    │   │   └── home.html
-    │   └── auth/
-    │       ├── login.html
-    │       └── register.html
-    └── static/
-        └── css/
-            └── style.css
-
----
-
 ## Установка и запуск
 
 ### 1. Клонировать репозиторий (git clone <ссылканарепозиторий>; cd weather_project)
