@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Погода в Пушкино{% endblock %}
+
+{% block content %}
+<div class="hero card">
+    <h1>Пушкино</h1>
+    <p>Дата: {{ today }}</p>
+    <p>Прогноз погоды на ближайший час, день и неделю</p>
+</div>
+
+<div class="grid">
+    <div class="card weather-card">
+        <h2>На ближайший час</h2>
+        <p><strong>Температура:</strong> {{ weather_hour.temperature }}°C</p>
+        <p><strong>Описание:</strong> {{ weather_hour.description }}</p>
+        <p><strong>Влажность:</strong> {{ weather_hour.humidity }}%</p>
+        <p><strong>Ветер:</strong> {{ weather_hour.wind_speed }} м/с</p>
+    </div>
+
+    <div class="card weather-card">
+        <h2>На день</h2>
+        <p><strong>Температура:</strong> {{ weather_day.temperature }}°C</p>
+        <p><strong>Описание:</strong> {{ weather_day.description }}</p>
+        <p><strong>Влажность:</strong> {{ weather_day.humidity }}</p>
+        <p><strong>Ветер:</strong> {{ weather_day.wind_speed }}</p>
+    </div>
+
+    <div class="card weather-card">
+        <h2>На неделю</h2>
+
+        {% if week_forecast %}
+            {% for day in week_forecast %}
+                <div class="week-item">
+                    <strong>{{ day.date }}</strong><br>
+                    {{ day.description }}<br>
+                    Макс: {{ day.temp_max }}°C, Мин: {{ day.temp_min }}°C
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Данные о прогнозе на неделю временно недоступны.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
